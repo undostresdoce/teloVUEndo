@@ -6,6 +6,7 @@
         <p>{{ item.name }} - Cantidad: {{ item.quantity }}</p>
         <button @click="cart.removeFromCart(item.id)">Eliminar</button>
       </div>
+      <button class="clear" @click="cart.clearCart">Vaciar carrito</button>
     </div>
     <p v-else>El carrito está vacío.</p>
   </section>
@@ -20,12 +21,16 @@ const cart = useCartStore()
 .cart {
   padding: 2rem;
 }
-
 .cart-item {
   background: white;
   border: 1px solid #ddd;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 6px;
+}
+.clear {
+  background-color: #dc3545;
+  color: white;
+  margin-top: 1rem;
 }
 </style>

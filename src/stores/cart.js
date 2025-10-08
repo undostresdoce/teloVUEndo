@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia'
-
 export const useCartStore = defineStore('cart', {
   state: () => ({
     items: JSON.parse(localStorage.getItem('cart')) || []
@@ -17,6 +15,10 @@ export const useCartStore = defineStore('cart', {
     removeFromCart(id) {
       this.items = this.items.filter(p => p.id !== id)
       localStorage.setItem('cart', JSON.stringify(this.items))
+    },
+    clearCart() {
+      this.items = []
+      localStorage.removeItem('cart')
     }
   }
 })

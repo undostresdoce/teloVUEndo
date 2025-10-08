@@ -1,13 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <h1>🛒 TeLoVendo</h1>
-      <nav>
-        <router-link to="/">Inicio</router-link>
-        <router-link to="/cart">Carrito</router-link>
-        <router-link v-if="!user" to="/login">Login</router-link>
-        <button v-else @click="logout">Cerrar sesión</button>
-      </nav>
+      <Navbar />
     </header>
 
     <main>
@@ -15,48 +9,33 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 TeLoVendo - VUE</p>
+      <p>&copy; 2025 TeLoVendo. VUE .</p>
       <p>Camila Collado - Daniel Paredes - Jesús Pérez</p>
     </footer>
   </div>
 </template>
 
 <script setup>
-import { useUserStore } from './stores/user'
-const userStore = useUserStore()
-const user = userStore.user
-
-function logout() {
-  userStore.logout()
-}
+import Navbar from './components/Navbar.vue'
 </script>
 
 <style scoped>
-header {
-  background-color: #222;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-nav {
-  margin-top: 1rem;
+#app {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-router-link, button {
-  color: white;
-  text-decoration: none;
-  background: none;
-  border: none;
-  font-weight: bold;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 main {
+  flex: 1;
   padding: 2rem;
-  min-height: 70vh;
+  background-color: #f9f9f9;
 }
 
 footer {
