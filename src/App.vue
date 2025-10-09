@@ -9,7 +9,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 TeLoVendo. VUE .</p>
+      <p>&copy; 2025 TeLoVendo. VUE.</p>
       <p>Camila Collado - Daniel Paredes - Jesús Pérez</p>
     </footer>
   </div>
