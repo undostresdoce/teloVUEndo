@@ -8,3 +8,4 @@ Permite buscar productos, agregarlos al carrito, iniciar sesión y visualizar de
 
 - Camila Collado Tejo
 - Daniel Paredes
+- Jesús Pérez
